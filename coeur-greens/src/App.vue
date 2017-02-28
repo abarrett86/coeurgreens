@@ -3,10 +3,10 @@
 
       <div class="site_content">
           <el-row class="site_header">
-              <el-col :span="12" :xs="{span: 24}" class="logo">
+              <el-col :md="{span:12, offset: 0}" :xs="{span: 24}" :sm="{span: 24}" class="logo">
                   <img src="./assets/img/logo-top-green-2x.png" class="top_logo"/>
               </el-col>
-              <el-col :span="12" :xs="{span: 24}" class="nav_menu">
+              <el-col  :md="{span:12, offset: 0}" :xs="{span: 24}" :sm="{span: 24}" class="nav_menu">
                   <el-row>
                       <el-col :span="6" class="nav_link"><a href="#about-us" v-smooth-scroll>ABOUT US</a></el-col>
                       <el-col :span="6" class="nav_link"><a href="#tech" v-smooth-scroll>TECH</a></el-col>
@@ -25,8 +25,8 @@
       </parallax>
       <div class="site_content">
       <el-row id="about-us" class="about_us" >
-          <el-col :span="11" :xs="{span: 24}" ><img src="./assets/img/coeur-container.png" class="container_image"/></el-col>
-          <el-col :span="11" :offset="1" :xs="{span: 24}" >
+          <el-col :md="{span:11, offset: 0}" :xs="{span: 24}" :sm="{span: 24}" ><img src="./assets/img/coeur-container.png" class="container_image"/></el-col>
+          <el-col :md="{span:11, offset: 1}" :xs="{span: 24}" :sm="{span: 24}" >
               <h1>About us</h1>
               <p>We are Coeur Greens, an Agricultural Technology (AgTech) company that provides fresh, non-GMO, sustainable, locally grown greens 365 days a year. Located in North Idaho, Coeur Greens is a member of <span class="font_bold">Idaho Preferred&reg;</span>, a program managed by the Idaho State Department of Agriculture to identify and promote Idaho food and agriculture products.</p>
               <img src="./assets/img/idaho-green-2x.png" class="idaho_green_image" />
@@ -34,24 +34,24 @@
       </el-row>
 
       <el-row class="about_tiles">
-            <el-col :span="6" :xs="{span: 12}"  class="content_tile about_tile">
+            <el-col :md="{span:6, offset: 0}" :xs="{span: 24}"  :sm="{span: 12}"  class="content_tile about_tile">
                 <img src="./assets/img/icon-one-2x.png" />
-                <h6>PESTICIDE FREE</h6>
+                <h6>PESTICIDE<br/>FREE</h6>
             </el-col>
 
-            <el-col :span="6" :xs="{span: 12}"  class="content_tile about_tile">
+            <el-col :md="{span:6, offset: 0}" :xs="{span: 24}" :sm="{span: 12}"  class="content_tile about_tile">
                 <img src="./assets/img/icon-two-2x.png" />
-                <h6>SUSTAINABLE AGRICULTURE</h6>
+                <h6>SUSTAINABLE<br/>AGRICULTURE</h6>
             </el-col>
 
-            <el-col :span="6" :xs="{span: 12}"  class="content_tile about_tile">
+            <el-col :md="{span:6, offset: 0}" :xs="{span: 24}" :sm="{span: 12}"  class="content_tile about_tile">
                 <img src="./assets/img/icon-three-2x.png" />
-                <h6>URBAN VERTICAL FARMING</h6>
+                <h6>URBAN VERTICAL<br/>FARMING</h6>
             </el-col>
 
-            <el-col :span="6" :xs="{span: 12}"  class="content_tile about_tile">
+            <el-col :md="{span:6, offset: 0}" :xs="{span: 24}" :sm="{span: 12}"  class="content_tile about_tile">
                 <img src="./assets/img/icon-four-2x.png" />
-                <h6>PREMIUM QUALITY 365</h6>
+                <h6>PREMIUM QUALITY<br/>365</h6>
             </el-col>
 
       </el-row>
@@ -61,8 +61,8 @@
           <el-col :span="24">
               <div class="site_content">
                   <el-row>
-                      <el-col :span="16" class="about_footer_text" :xs="{span: 24}" >GROWN WITH FRESH AQUIFER WATER FROM</el-col>
-                      <el-col :span="8"  class="about_footer_image"  :xs="{span: 24}"  ><img src="./assets/img/logo-horizontal-2x.png" /></el-col>
+                      <el-col :md="{span:16, offset: 0}" class="about_footer_text" :xs="{span: 24}" :sm="{span: 24}" >GROWN WITH FRESH AQUIFER WATER FROM</el-col>
+                      <el-col :md="{span:8, offset: 0}"  class="about_footer_image"  :xs="{span: 24}" :sm="{span: 24}"  ><img src="./assets/img/logo-horizontal-2x.png" /></el-col>
                   </el-row>
               </div>
           </el-col>
@@ -71,28 +71,28 @@
         <parallax :speed='0.5' :num='2' ></parallax>
       <div class="site_content">
       <el-row id="tech" class="tech">
-          <el-col :span="12"   :xs="{span: 24}">
+          <el-col :md="{span:12, offset: 0}"  :xs="{span: 24}" :sm="{span: 24}">
               <h1>Our tech</h1>
               <p>Coeur Greens Vertical Farms are out fitted with innovative climate and hydroponic growing technologies for high volume, consistent production and harvests 365 days a year.</p>
           </el-col>
-          <el-col :span="11" :offset="1" :xs="{span: 24}" class="process_animation_container"><img src="./assets/img/process-animation-2.gif" /></el-col>
+          <el-col :md="{span:11, offset: 1}" :xs="{span: 24, offset: 0}" :sm="{span: 24, offset: 0}" class="process_animation_container"><img src="./assets/img/process-animation-2.gif" /></el-col>
       </el-row>
 
-      <el-row class="tech_tiles">
+      <el-row class="tech_tiles" :gutter="20">
 
-          <el-col :span="8" :xs="{span: 24}" class="content_tile thirds_tile">
+          <el-col :md="{span:8, offset: 0}" :xs="{span: 24}" :sm="{span: 24}" class="content_tile thirds_tile">
               <hr />
               <h6>CONSISTENT PRODUCTION</h6>
               <p>One Coeur Greens Vertical Farm is equal to two acres of conventional farmland.</p>
           </el-col>
 
-          <el-col :span="8" :xs="{span: 24}" class="content_tile thirds_tile">
+          <el-col :md="{span:8, offset: 0}" :xs="{span: 24}" :sm="{span: 24}" class="content_tile thirds_tile">
               <hr />
               <h6>CONSERVATION</h6>
               <p>Every Coeur Greens Vertical Farm uses 90% less water than a conventional farm</p>
           </el-col>
 
-          <el-col :span="8" :xs="{span: 24}" class="content_tile thirds_tile">
+          <el-col :md="{span:8, offset: 0}" :xs="{span: 24}" :sm="{span: 24}" class="content_tile thirds_tile">
               <hr />
               <h6>CONTROLLED ENVIRONMENT</h6>
               <p>Perfect growing environment for year round production regardless of crazy Idaho weather</p>
@@ -119,23 +119,23 @@
 
         <parallax :speed='0.25' :num='3' ></parallax>
       <div class="site_content">
-      <el-row id="products">
+      <el-row id="products" class="product_tiles">
 
           <el-col :span="24" class="center_text"><h1>Our Greens</h1></el-col>
 
-              <el-col :span="8" :xs="{span: 24}" class="content_tile thirds_tile">
+              <el-col :md="{span:8, offset: 0}" :xs="{span: 24}"  :sm="{span: 24}" class="content_tile thirds_tile">
                   <img src="./assets/img/products-lettuce.jpg"/>
                   <h6>LETTUCE HEADS</h6>
                   <p>Green and Red Butterhead</p>
               </el-col>
 
-              <el-col :span="8"  :xs="{span: 24}" class="content_tile thirds_tile">
+              <el-col :md="{span:8, offset: 0}"  :xs="{span: 24}" :sm="{span: 24}" class="content_tile thirds_tile">
                   <img src="./assets/img/products-basil.jpg"/>
                   <h6>MICROGEEN HERBS</h6>
                   <p>Italian Basil, Lemon Basil</p>
               </el-col>
 
-              <el-col :span="8" :xs="{span: 24}" class="content_tile thirds_tile">
+              <el-col :md="{span:8, offset: 0}" :xs="{span: 24}" :sm="{span: 24}" class="content_tile thirds_tile">
               <img src="./assets/img/products-sprouts.jpg"/>
                   <h6>MICROGREENS</h6>
                   <p>
@@ -161,12 +161,12 @@
 
                 <el-row>
 
-              <el-col class="app_footer_left" :span="12" :xs="{span: 24}">
+              <el-col class="app_footer_left" :md="{span:12, offset: 0}" :xs="{span: 24}" :sm="{span: 24}">
                   <el-row>
-                        <el-col :span="16" :xs="{span: 24}">
+                        <el-col :md="{span:16, offset: 0}" :xs="{span: 24}" :sm="{span: 24}" class="copyright_text">
                             <p>Copyright &copy; 2017 Coeur Greens. All rights reserved.</p>
                         </el-col>
-                      <el-col :span="8" :xs="{span: 24}">
+                      <el-col :md="{span:8, offset: 0}" :xs="{span: 24}" :sm="{span: 24}">
                         <a target="_blank" href="http://www.facebook.com"><img src="./assets/img/social-facebook-2x.png"/></a>&nbsp;
                         <a target="_blank" href="http://www.youtube.com"><img src="./assets/img/social-youtube-2x.png"/></a>&nbsp;
                         <a target="_blank" href="http://www.instagram.com"><img src="./assets/img/social-instagram-2x.png"/></a>
@@ -174,12 +174,12 @@
                   </el-row>
               </el-col>
 
-              <el-col class="app_footer_right" :span="12" :xs="{span: 24}">
+              <el-col class="app_footer_right" :md="{span:12, offset: 0}" :xs="{span: 24}" :sm="{span: 24}">
                   <el-row>
-                      <el-col :span="18" :xs="{span: 24}">
+                      <el-col :md="{span:18, offset: 0}" :xs="{span: 24}" :sm="{span: 24}">
                           <p>We are Idaho Preferred!</p>
                       </el-col>
-                      <el-col :span="6" :xs="{span: 24}">
+                      <el-col :md="{span:6, offset: 0}" :xs="{span: 24}" :sm="{span: 24}">
                         <img src="./assets/img/idaho-white-2x.png"/>
                       </el-col>
               </el-col>
@@ -223,13 +223,14 @@ export default {
 }
 
 p {
-    font-size: .85em;
+    font-size: 1em;
     font-family: Nunito-light;
 }
 
 h1{
     color: #24b14a;
     font-weight: 300;
+    font-size: 3em;
 }
 
 .site_content{
@@ -242,12 +243,16 @@ h1{
     width: 100%;
     margin-top: 220px;
 }
+
+
     .sub_head h1{
         font-weight: 700;
+
     }
     .sub_head h4{
         font-weight: 200;
         padding-top: 10px;
+        font-size: 1.5em;
     }
 
     .sub_head h1,
@@ -257,7 +262,7 @@ h1{
     }
 
 .top_logo{
-    max-width: 114px;
+    max-width: 160px;
 }
 
     .font_bold{
@@ -265,9 +270,12 @@ h1{
     }
 
 
-    .about_us,
-    .tech{
+    .about_us{
         margin-top: 80px;
+    }
+
+    .tech{
+        margin-top: 100px;
     }
 
 
@@ -277,13 +285,13 @@ h1{
     }
 
     .idaho_green_image{
-        width: 65px;
+        width: 95px;
     }
 
 
 
     .about_tile img{
-        max-width: 110px;
+        max-width: 150px;
     }
 
     .about_tiles{
@@ -295,20 +303,20 @@ h1{
     .about_footer{
         background-color: #24b14a;
         color: white;
-        padding-top: 25px;
-        padding-bottom: 25px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .about_footer_text{
-        font-size: .85em;
+        font-size: 1em;
         text-align: right;
         font-weight: 700;
         padding-right: 30px;
-        margin-top: 20px;
+        margin-top: 26px;
     }
 
     .about_footer img{
-        max-width: 150px;
+        max-width: 180px;
         display: block;
     }
 
@@ -327,9 +335,14 @@ h1{
 
 
     .tech_tiles{
-        padding-bottom: 30px;
+        padding-top: 40px;
+        padding-bottom: 80px;
     }
-    
+
+
+    .tech_tiles h6{
+        padding-bottom: 15px;
+    }
 
     .tech_footer{
         padding-top: 50px;
@@ -355,8 +368,9 @@ h1{
     }
 
     .content_tile h6{
-        font-size: .8em;
-        width: 80%;
+        padding-top: 25px;
+        font-size: 1em;
+        width: 100%;
         max-width: 120px;
         margin: auto;
         display: block;
@@ -395,16 +409,16 @@ h1{
     .site_header a{
         text-decoration: none;
         font-weight: 700;
-        font-size: .85em;
+        font-size: 1em;
         color: #24b14a;
     }
 
     .site_header .logo{
-        height: 114px;
+        height: 160px;
     }
 
     .nav_menu{
-        margin-top: 40px;
+        margin-top: 70px;
     }
 
     .nav_link{
@@ -431,7 +445,7 @@ h1{
     }
 
     .app_footer_right p{
-        padding-top: 5px;
+        padding-top: 3px;
     }
     .app_footer_right img{
         width: 80px;
@@ -451,14 +465,23 @@ h1{
         width: 40px;
     }
 
-    @media (max-width: 768px) {
+    .copyright_text p{
+        font-weight: normal;
+        font-size: .9em;
+    }
+
+    .product_tiles .content_tile img{
+        max-width: 335px;
+    }
+
+    @media (max-width: 991px) {
         .site_header{
             text-align: center;
         }
 
         .nav_menu{
-            margin-top: 0px;
-            margin-bottom: 5px;
+            margin-top: 15px;
+            margin-bottom: 15px;
         }
 
         .about_footer{
@@ -474,6 +497,10 @@ h1{
 
         .about_footer_image img{
             float: none;
+        }
+
+        .about_tiles h6{
+            padding-bottom: 35px;
         }
 
         .about_footer_image{
@@ -496,6 +523,10 @@ h1{
         .app_footer_left,
         .app_footer_right{
             text-align: center;
+        }
+
+        #app .process_animation_container{
+            margin-left: 0;
         }
     }
 

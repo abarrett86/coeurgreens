@@ -130,7 +130,7 @@ destroyed () {
 
 .parallax-1,
 .parallax-1 .parallax{
-    height: 490px;
+    height: 650px;
 }
 
 

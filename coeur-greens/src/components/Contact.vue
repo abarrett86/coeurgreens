@@ -7,12 +7,12 @@
         </el-row>
 
         <el-row>
-            <el-col :sm="{span:12, offset:6}" :xs="{span:24, offset: 0}">
+            <el-col :sm="{span:12, offset:6}" :xs="{span:24, offset: 0}" >
                 <el-row :gutter="20">
-                    <el-col :span="12" :xs="{span:24}" class="contact_name_container">
+                    <el-col :span="12" :xs="{span:24}"  :sm="{span: 24}" class="contact_name_container">
                         <el-input placeholder="name" v-model="contactName" class="contact_input"></el-input>
                     </el-col>
-                    <el-col :span="12" :xs="{span:24}">
+                    <el-col :span="12" :xs="{span:24}"  :sm="{span: 24}">
                         <el-input placeholder="email" v-model="contactEmail" class="contact_input"></el-input>
                     </el-col>
                 </el-row>
@@ -87,7 +87,7 @@
         font-weight: 700;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
         .contact_form {
             margin-top: 10px;
         }
