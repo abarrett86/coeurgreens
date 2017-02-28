@@ -3,7 +3,7 @@
 
       <div class="site_content">
           <el-row class="site_header">
-              <el-col :span="12" :xs="{span: 24}">
+              <el-col :span="12" :xs="{span: 24}" class="logo">
                   <img src="./assets/img/logo-top-green-2x.png" class="top_logo"/>
               </el-col>
               <el-col :span="12" :xs="{span: 24}" class="nav_menu">
@@ -71,28 +71,28 @@
         <parallax :speed='0.5' :num='2' ></parallax>
       <div class="site_content">
       <el-row id="tech" class="tech">
-          <el-col :span="12">
+          <el-col :span="12"   :xs="{span: 24}">
               <h1>Our tech</h1>
               <p>Coeur Greens Vertical Farms are out fitted with innovative climate and hydroponic growing technologies for high volume, consistent production and harvests 365 days a year.</p>
           </el-col>
-          <el-col :span="12"><img src="./assets/img/process-animation-2.gif" /></el-col>
+          <el-col :span="11" :offset="1" :xs="{span: 24}" class="process_animation_container"><img src="./assets/img/process-animation-2.gif" /></el-col>
       </el-row>
 
-      <el-row>
+      <el-row class="tech_tiles">
 
-          <el-col :span="8" class="content_tile">
+          <el-col :span="8" :xs="{span: 24}" class="content_tile thirds_tile">
               <hr />
               <h6>CONSISTENT PRODUCTION</h6>
               <p>One Coeur Greens Vertical Farm is equal to two acres of conventional farmland.</p>
           </el-col>
 
-          <el-col :span="8" class="content_tile">
+          <el-col :span="8" :xs="{span: 24}" class="content_tile thirds_tile">
               <hr />
               <h6>CONSERVATION</h6>
               <p>Every Coeur Greens Vertical Farm uses 90% less water than a conventional farm</p>
           </el-col>
 
-          <el-col :span="8" class="content_tile">
+          <el-col :span="8" :xs="{span: 24}" class="content_tile thirds_tile">
               <hr />
               <h6>CONTROLLED ENVIRONMENT</h6>
               <p>Perfect growing environment for year round production regardless of crazy Idaho weather</p>
@@ -108,7 +108,7 @@
               <div class="site_content">
                   <el-row class="tech_footer">
                       <el-col :span="24">
-                          <h3>Farm to Table</h3>
+                          <h2>Farm to Table</h2>
                           <img src="./assets/img/flow-chart-2x.png" class="flow_chart"/>
                       </el-col>
                   </el-row>
@@ -123,22 +123,23 @@
 
           <el-col :span="24" class="center_text"><h1>Our Greens</h1></el-col>
 
-              <el-col :span="8" class="content_tile">
+              <el-col :span="8" :xs="{span: 24}" class="content_tile thirds_tile">
                   <img src="./assets/img/products-lettuce.jpg"/>
                   <h6>LETTUCE HEADS</h6>
                   <p>Green and Red Butterhead</p>
               </el-col>
 
-              <el-col :span="8" class="content_tile">
+              <el-col :span="8"  :xs="{span: 24}" class="content_tile thirds_tile">
                   <img src="./assets/img/products-basil.jpg"/>
                   <h6>MICROGEEN HERBS</h6>
                   <p>Italian Basil, Lemon Basil</p>
               </el-col>
 
-              <el-col :span="8" class="content_tile">
+              <el-col :span="8" :xs="{span: 24}" class="content_tile thirds_tile">
               <img src="./assets/img/products-sprouts.jpg"/>
                   <h6>MICROGREENS</h6>
-                  <p>Red Radish
+                  <p>
+                      Red Radish
                       Spicy Mix (Red and Green Mustards)
                       Mild Mix (Cabbage, kale, kohlrabi, Mizuna)</p>
               </el-col>
@@ -149,14 +150,45 @@
 
 
         <parallax :speed='0.25' :num='4' >
-            <el-row id="contact" slot="content">
-                <el-col :span="12" :offset="6"><contact></contact></el-col>
-            </el-row>
+            <contact id="contact" slot="content">
+            </contact>
         </parallax>
 
-      <el-row class="app_footer">
 
-      </el-row>
+          <el-row class="app_footer">
+                <el-col :span="24">
+                    <div class="site_content">
+
+                <el-row>
+
+              <el-col class="app_footer_left" :span="12" :xs="{span: 24}">
+                  <el-row>
+                        <el-col :span="16" :xs="{span: 24}">
+                            <p>Copyright &copy; 2017 Coeur Greens. All rights reserved.</p>
+                        </el-col>
+                      <el-col :span="8" :xs="{span: 24}">
+                        <a target="_blank" href="http://www.facebook.com"><img src="./assets/img/social-facebook-2x.png"/></a>&nbsp;
+                        <a target="_blank" href="http://www.youtube.com"><img src="./assets/img/social-youtube-2x.png"/></a>&nbsp;
+                        <a target="_blank" href="http://www.instagram.com"><img src="./assets/img/social-instagram-2x.png"/></a>
+                    </el-col>
+                  </el-row>
+              </el-col>
+
+              <el-col class="app_footer_right" :span="12" :xs="{span: 24}">
+                  <el-row>
+                      <el-col :span="18" :xs="{span: 24}">
+                          <p>We are Idaho Preferred!</p>
+                      </el-col>
+                      <el-col :span="6" :xs="{span: 24}">
+                        <img src="./assets/img/idaho-white-2x.png"/>
+                      </el-col>
+              </el-col>
+                </el-row>
+                    </div>
+                </el-col>
+
+          </el-row>
+      </div>
 
   </div>
 
@@ -191,7 +223,7 @@ export default {
 }
 
 p {
-    font-size: .7em;
+    font-size: .85em;
     font-family: Nunito-light;
 }
 
@@ -233,7 +265,8 @@ h1{
     }
 
 
-    .about_us{
+    .about_us,
+    .tech{
         margin-top: 80px;
     }
 
@@ -283,16 +316,30 @@ h1{
 
     }
 
-    .tech img{
-        max-width: 205px;
+    .process_animation_container{
+        text-align: center;
+        margin-bottom: 45px;
     }
 
+    .tech img{
+        max-width: 300px;
+    }
+
+
+    .tech_tiles{
+        padding-bottom: 30px;
+    }
     
 
     .tech_footer{
+        padding-top: 50px;
+        padding-bottom: 50px;
         background-color: #f5f5f5;
         text-align: center;
-
+    }
+    .tech_footer h2{
+        font-size: 2em;
+        font-weight: normal;
     }
 
     .tech_footer img{
@@ -301,6 +348,10 @@ h1{
 
     .content_tile{
         text-align: center;
+    }
+
+    .thirds_tile h6{
+        height: 35px;
     }
 
     .content_tile h6{
@@ -329,7 +380,7 @@ h1{
 
 
     .app_footer{
-        height: 50px;
+
         background-color: #24b14a;
     }
 
@@ -344,8 +395,12 @@ h1{
     .site_header a{
         text-decoration: none;
         font-weight: 700;
-        font-size: .7em;
+        font-size: .85em;
         color: #24b14a;
+    }
+
+    .site_header .logo{
+        height: 114px;
     }
 
     .nav_menu{
@@ -354,6 +409,46 @@ h1{
 
     .nav_link{
         text-align: center;
+    }
+
+    .app_footer{
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+
+    .app_footer p{
+        color: white;
+        font-weight: 700;
+
+    }
+
+    .app_footer_left{
+        margin-top: 8px;
+    }
+
+    .app_footer_right{
+        text-align: right;
+    }
+
+    .app_footer_right p{
+        padding-top: 5px;
+    }
+    .app_footer_right img{
+        width: 80px;
+    }
+
+    .app_footer_left p{
+        display: inline-block;
+    }
+
+    .app_footer_left .links{
+        display: inline-block;
+        margin-top: 0px;
+
+    }
+
+    .app_footer_left img{
+        width: 40px;
     }
 
     @media (max-width: 768px) {
@@ -382,6 +477,24 @@ h1{
         }
 
         .about_footer_image{
+            text-align: center;
+        }
+
+        .tech{
+            text-align: center;
+        }
+
+        .tech_footer {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .thirds_tile img{
+            max-width: 70%
+        }
+
+        .app_footer_left,
+        .app_footer_right{
             text-align: center;
         }
     }
