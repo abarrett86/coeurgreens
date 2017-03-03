@@ -29,7 +29,7 @@
           <el-col :md="{span:11, offset: 1}" :xs="{span: 24}" :sm="{span: 24}" >
               <h1>About us</h1>
               <p>We are Coeur Greens, an Agricultural Technology (AgTech) company that provides fresh, non-GMO, sustainable, locally grown greens 365 days a year. Located in North Idaho, Coeur Greens is a member of <span class="font_bold">Idaho Preferred&reg;</span>, a program managed by the Idaho State Department of Agriculture to identify and promote Idaho food and agriculture products.</p>
-              <img src="./assets/img/idaho-green-2x.png" class="idaho_green_image" />
+              <a href="https://idahopreferred.com/members/coeur-greens/"><img src="./assets/img/idaho-green-2x.png" class="idaho_green_image" /></a>
           </el-col>
       </el-row>
 
@@ -61,8 +61,8 @@
           <el-col :span="24">
               <div class="site_content">
                   <el-row>
-                      <el-col :md="{span:16, offset: 0}" class="about_footer_text" :xs="{span: 24}" :sm="{span: 24}" >GROWN WITH FRESH AQUIFER WATER FROM</el-col>
-                      <el-col :md="{span:8, offset: 0}"  class="about_footer_image"  :xs="{span: 24}" :sm="{span: 24}"  ><img src="./assets/img/logo-horizontal-2x.png" /></el-col>
+                      <el-col :lg="{span:12, offset: 0}" :md="{span:16, offset: 0}" class="about_footer_text" :xs="{span: 24}" :sm="{span: 24}" >GROWN WITH FRESH AQUIFER WATER FROM</el-col>
+                      <el-col :lg="{span:12, offset: 0}"  :md="{span:8, offset: 0}"  class="about_footer_image"  :xs="{span: 24}" :sm="{span: 24}"  ><img src="./assets/img/logo-horizontal-2x.png" /></el-col>
                   </el-row>
               </div>
           </el-col>
@@ -78,7 +78,7 @@
           <el-col :md="{span:11, offset: 1}" :xs="{span: 24, offset: 0}" :sm="{span: 24, offset: 0}" class="process_animation_container"><img src="./assets/img/process-animation-2.gif" /></el-col>
       </el-row>
 
-      <el-row class="tech_tiles" :gutter="20">
+      <el-row class="tech_tiles" :gutter="40">
 
           <el-col :md="{span:8, offset: 0}" :xs="{span: 24}" :sm="{span: 24}" class="content_tile thirds_tile">
               <hr />
@@ -123,6 +123,8 @@
 
           <el-col :span="24" class="center_text"><h1>Our Greens</h1></el-col>
 
+          <el-col :span="24">
+
               <el-col :md="{span:8, offset: 0}" :xs="{span: 24}"  :sm="{span: 24}" class="content_tile thirds_tile">
                   <img src="./assets/img/products-lettuce.jpg"/>
                   <h6>LETTUCE HEADS</h6>
@@ -139,10 +141,11 @@
               <img src="./assets/img/products-sprouts.jpg"/>
                   <h6>MICROGREENS</h6>
                   <p>
-                      Red Radish
-                      Spicy Mix (Red and Green Mustards)
+                      Red Radish<br/>
+                      Spicy Mix (Red and Green Mustards)<br/>
                       Mild Mix (Cabbage, kale, kohlrabi, Mizuna)</p>
               </el-col>
+          </el-col>
 
       </el-row>
 
@@ -167,9 +170,9 @@
                             <p>Copyright &copy; 2017 Coeur Greens. All rights reserved.</p>
                         </el-col>
                       <el-col :md="{span:8, offset: 0}" :xs="{span: 24}" :sm="{span: 24}">
-                        <a target="_blank" href="http://www.facebook.com"><img src="./assets/img/social-facebook-2x.png"/></a>&nbsp;
-                        <a target="_blank" href="http://www.youtube.com"><img src="./assets/img/social-youtube-2x.png"/></a>&nbsp;
-                        <a target="_blank" href="http://www.instagram.com"><img src="./assets/img/social-instagram-2x.png"/></a>
+                        <a target="_blank" href="https://www.facebook.com/Coeur-Greens-1220251638032970/"><img src="./assets/img/social-facebook-2x.png"/></a>&nbsp;
+                        <a target="_blank" href="https://www.youtube.com/channel/UCrxIJEfTb45-rYoGYnbFfCg"><img src="./assets/img/social-youtube-2x.png"/></a>&nbsp;
+                        <a target="_blank" href="http://instagram.com/coeurgreens/"><img src="./assets/img/social-instagram-2x.png"/></a>
                     </el-col>
                   </el-row>
               </el-col>
@@ -180,7 +183,7 @@
                           <p>We are Idaho Preferred!</p>
                       </el-col>
                       <el-col :md="{span:6, offset: 0}" :xs="{span: 24}" :sm="{span: 24}">
-                        <img src="./assets/img/idaho-white-2x.png"/>
+                        <a href="https://idahopreferred.com/members/coeur-greens/"><img src="./assets/img/idaho-white-2x.png"/></a>
                       </el-col>
               </el-col>
                 </el-row>
@@ -474,6 +477,11 @@ h1{
         max-width: 335px;
     }
 
+    .product_tiles{
+        margin-top: 75px;
+        margin-bottom: 75px;
+    }
+
     @media (max-width: 991px) {
         .site_header{
             text-align: center;
@@ -496,7 +504,7 @@ h1{
         }
 
         .about_footer_image img{
-            float: none;
+            text-align: center;
         }
 
         .about_tiles h6{
@@ -528,6 +536,13 @@ h1{
         #app .process_animation_container{
             margin-left: 0;
         }
+    }
+
+    @media (max-width: 991px) {
+        .site_header a{
+            font-size: .8em;
+        }
+
     }
 
 </style>

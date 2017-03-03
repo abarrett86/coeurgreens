@@ -57,7 +57,12 @@ destroyed () {
 
     var windowYOffset = window.pageYOffset,
     elementYOffset = this.$el.offsetTop,
-    elBackgrounPos = "50% " + ((windowYOffset - elementYOffset) * speed) + "px";
+        windowWidth = window.innerWidth,
+    elBackgrounPos = "50% " + ((windowYOffset - elementYOffset) * speed ) + "px";
+
+    if(windowWidth < 768){
+        elBackgrounPos = "0 0";
+    }
 
     var parallaxingNode = this.$el.getElementsByClassName("parallax")[0];
 
@@ -130,7 +135,7 @@ destroyed () {
 
 .parallax-1,
 .parallax-1 .parallax{
-    height: 650px;
+    height: 500px;
 }
 
 
