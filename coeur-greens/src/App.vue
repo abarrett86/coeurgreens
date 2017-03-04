@@ -318,8 +318,8 @@ h1{
         background-color: #24b14a;
         color: white;
         text-align: center;
-        padding-top: 24px;
-        padding-bottom: 2px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .about_footer_content{
@@ -457,8 +457,8 @@ h1{
     }
 
     .app_footer{
-        padding-top: 15px;
-        padding-bottom: 5px;
+        padding-top: 24px;
+        padding-bottom: 15px;
     }
 
     .app_footer p{
@@ -593,7 +593,11 @@ h1{
         .about_footer_text{
             padding-top: 0px;
             padding-bottom: 25px;
+            text-align: center;
+            width: 100%;
         }
+
+
 
         .about_footer_text,
         .about_footer_image{
