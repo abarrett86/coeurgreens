@@ -17,7 +17,8 @@
           </el-row>
       </div>
 
-      <parallax :speed='0.5' :num='1' >
+      <parallax :parallax-height=500 :speed='0.25' :num='1' >
+
           <el-row slot="content" class="sub_head">
               <el-col :span="24" ><h1>FRESH. LOCAL. GREENS.</h1></el-col>
               <el-col :span="24" ><h4>Sustainably grown in Idaho 365 days a year</h4></el-col>
@@ -58,17 +59,26 @@
       </div>
 
       <el-row class="about_footer">
+
+          <div width="auto">
+
           <el-col :span="24">
               <div class="site_content">
-                  <el-row>
-                      <el-col :lg="{span:12, offset: 0}" :md="{span:16, offset: 0}" class="about_footer_text" :xs="{span: 24}" :sm="{span: 24}" >GROWN WITH FRESH AQUIFER WATER FROM</el-col>
-                      <el-col :lg="{span:12, offset: 0}"  :md="{span:8, offset: 0}"  class="about_footer_image"  :xs="{span: 24}" :sm="{span: 24}"  ><img src="./assets/img/logo-horizontal-2x.png" /></el-col>
-                  </el-row>
+
+                  <div class="about_footer_content">
+                      <div class="about_footer_text">
+                          GROWN WITH FRESH AQUIFER WATER FROM
+                      </div>
+                      <div class="about_footer_image">
+                          <img src="./assets/img/logo-horizontal-2x.png"/>
+                      </div>
+                  </div>
               </div>
           </el-col>
+          </div>
       </el-row>
 
-        <parallax :speed='0.5' :num='2' ></parallax>
+        <parallax :parallax-height=320 :speed='0.25' :num='2' ></parallax>
       <div class="site_content">
       <el-row id="tech" class="tech">
           <el-col :md="{span:12, offset: 0}"  :xs="{span: 24}" :sm="{span: 24}">
@@ -81,19 +91,19 @@
       <el-row class="tech_tiles" :gutter="40">
 
           <el-col :md="{span:8, offset: 0}" :xs="{span: 24}" :sm="{span: 24}" class="content_tile thirds_tile">
-              <hr />
+              <div class="horizontal_line" />
               <h6>CONSISTENT PRODUCTION</h6>
               <p>One Coeur Greens Vertical Farm is equal to two acres of conventional farmland.</p>
           </el-col>
 
           <el-col :md="{span:8, offset: 0}" :xs="{span: 24}" :sm="{span: 24}" class="content_tile thirds_tile">
-              <hr />
-              <h6>CONSERVATION</h6>
+              <div class="horizontal_line" />
+              <h6>WATER CONSERVATION</h6>
               <p>Every Coeur Greens Vertical Farm uses 90% less water than a conventional farm</p>
           </el-col>
 
           <el-col :md="{span:8, offset: 0}" :xs="{span: 24}" :sm="{span: 24}" class="content_tile thirds_tile">
-              <hr />
+              <div class="horizontal_line" />
               <h6>CONTROLLED ENVIRONMENT</h6>
               <p>Perfect growing environment for year round production regardless of crazy Idaho weather</p>
           </el-col>
@@ -117,7 +127,7 @@
       </el-row>
 
 
-        <parallax :speed='0.25' :num='3' ></parallax>
+        <parallax :parallax-height=320  :speed='0.25' :num='3' ></parallax>
       <div class="site_content">
       <el-row id="products" class="product_tiles">
 
@@ -133,13 +143,13 @@
 
               <el-col :md="{span:8, offset: 0}"  :xs="{span: 24}" :sm="{span: 24}" class="content_tile thirds_tile">
                   <img src="./assets/img/products-basil.jpg"/>
-                  <h6>MICROGEEN HERBS</h6>
+                  <h6>MICROGREEN HERBS</h6>
                   <p>Italian Basil, Lemon Basil</p>
               </el-col>
 
               <el-col :md="{span:8, offset: 0}" :xs="{span: 24}" :sm="{span: 24}" class="content_tile thirds_tile">
               <img src="./assets/img/products-sprouts.jpg"/>
-                  <h6>MICROGREENS</h6>
+                  <h6>MICROGREENS AND MIXES</h6>
                   <p>
                       Red Radish<br/>
                       Spicy Mix (Red and Green Mustards)<br/>
@@ -152,7 +162,7 @@
       </div>
 
 
-        <parallax :speed='0.25' :num='4' >
+        <parallax :parallax-height=410 :speed='0.25' :num='4' >
             <contact id="contact" slot="content">
             </contact>
         </parallax>
@@ -207,7 +217,7 @@ export default {
   components: {
       Parallax,
       Contact
-  }
+  },
 }
 </script>
 
@@ -220,14 +230,15 @@ export default {
     }
 #app {
     background-color: white;
-  color: #2c3e50;
+  color: #242424;
     padding: 0;
     margin: 0;
 }
 
 p {
     font-size: 1em;
-    font-family: Nunito-light;
+    font-family: Nunito;
+    font-weight: 300;
 }
 
 h1{
@@ -306,21 +317,30 @@ h1{
     .about_footer{
         background-color: #24b14a;
         color: white;
-        padding-top: 50px;
-        padding-bottom: 50px;
+        text-align: center;
+        padding-top: 24px;
+        padding-bottom: 2px;
+    }
+
+    .about_footer_content{
+        display: inline-block;
     }
 
     .about_footer_text{
+        display:inline-block;
         font-size: 1em;
-        text-align: right;
         font-weight: 700;
         padding-right: 30px;
-        margin-top: 26px;
+        padding-top: 27px;
+        float: left;
+    }
+
+    .about_footer_image{
+        display:inline-block;
     }
 
     .about_footer img{
         max-width: 180px;
-        display: block;
     }
 
     .tech{
@@ -333,6 +353,7 @@ h1{
     }
 
     .tech img{
+        width: 100%;
         max-width: 300px;
     }
 
@@ -367,7 +388,7 @@ h1{
     }
 
     .thirds_tile h6{
-        height: 35px;
+        height: 50px;
     }
 
     .content_tile h6{
@@ -379,8 +400,11 @@ h1{
         display: block;
     }
 
-    .content_tile hr{
+    .content_tile .horizontal_line{
+        height: 1px;
+        background-color: black;
         width: 10%;
+        display: inline-block;
     }
 
     .content_tile p{
@@ -414,6 +438,10 @@ h1{
         font-weight: 700;
         font-size: 1em;
         color: #24b14a;
+    }
+
+    .site_header a:hover{
+        color: #b4b4b4;
     }
 
     .site_header .logo{
@@ -452,6 +480,7 @@ h1{
     }
     .app_footer_right img{
         width: 80px;
+        margin-top: -3px;
     }
 
     .app_footer_left p{
@@ -470,7 +499,7 @@ h1{
 
     .copyright_text p{
         font-weight: normal;
-        font-size: .9em;
+        margin-top: 11px;
     }
 
     .product_tiles .content_tile img{
@@ -482,9 +511,25 @@ h1{
         margin-bottom: 75px;
     }
 
-    @media (max-width: 991px) {
+    @media screen and  (max-width: 991px) {
+
+        .product_tiles .content_tile img {
+            /*max-width: 480px;*/
+        }
+
         .site_header{
             text-align: center;
+        }
+
+        .about_tile img{
+            /*max-width: 250px;*/
+        }
+
+        .content_tile h6 {
+            padding-top: 25px;
+            font-size: 1.3em;
+            max-width: 200px;
+
         }
 
         .nav_menu{
@@ -498,9 +543,7 @@ h1{
 
         .about_footer_text{
             font-size: .8em;
-            text-align: center;
-            padding-right: 0px;
-            padding-bottom: 15px;
+
         }
 
         .about_footer_image img{
@@ -538,11 +581,34 @@ h1{
         }
     }
 
-    @media (max-width: 991px) {
+    @media screen and  (max-width: 768px) {
         .site_header a{
             font-size: .8em;
         }
 
+        .copyright_text p{
+            font-size: .9em;
+        }
+
+        .about_footer_text{
+            padding-top: 0px;
+            padding-bottom: 25px;
+        }
+
+        .about_footer_text,
+        .about_footer_image{
+            display: block;
+        }
+
+        .sub_head {
+            margin-top: 140px;
+        }
+    }
+
+    @media screen and  (max-width: 380px) {
+        .site_header a {
+            font-size: .7em;
+        }
     }
 
 </style>

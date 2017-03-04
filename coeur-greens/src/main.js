@@ -4,18 +4,15 @@
 import Vue from 'vue'
 import App from './App'
 import ElementUI from 'element-ui'
+import VeeValidate from 'vee-validate'
 import 'element-ui/lib/theme-default/index.css'
 import vueSmoothScroll from 'vue-smooth-scroll'
-import ajax from './directives/ajax'
 
 import '../theme/index.css'
 
 Vue.use(ElementUI)
+Vue.use(VeeValidate)
 Vue.use(vueSmoothScroll)
-
-
-//directives
-Vue.directive('ajax', ajax);
 
 /* eslint-disable no-new */
 new Vue({

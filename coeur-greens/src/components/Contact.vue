@@ -2,23 +2,26 @@
     <div class="contact_form">
         <el-row>
             <el-col :span="24">
-                <h1>Want to know about our farm?</h1>
+                <h1 v-if="!submitted">Want to know about our farm?</h1>
+                <h1 v-else>Your message has been sent.  Thank you!</h1>
             </el-col>
         </el-row>
 
-        <el-row>
+        <el-row v-if="!submitted">
             <el-col :sm="{span:12, offset:6}" :xs="{span:24, offset: 0}" >
                 <el-row :gutter="20">
-                    <el-col :md="{span:12}" :xs="{span:24}"  :sm="{span: 24}" class="contact_name_container">
-                        <el-input placeholder="name" v-model="contactName" class="contact_input"></el-input>
+                    <el-col :md="{span:12}" :xs="{span:24}"  :sm="{span: 24}" class="contact_name_container" :class="{'has-error': errors.has('contactName') }">
+                        <el-input v-validate="'required|min:3'" name="contactName" type="text" placeholder="name" v-model="contactName" class="contact_input"></el-input>
                     </el-col>
-                    <el-col :md="{span:12}"  :span="12" :xs="{span:24}"  :sm="{span: 24}">
-                        <el-input placeholder="email" v-model="contactEmail" class="contact_input"></el-input>
+                    <el-col :md="{span:12}" :xs="{span:24}"  :sm="{span: 24}" :class="{'has-error': errors.has('email') }">
+                        <el-input v-validate="'required|email'" name="email" type="text" placeholder="email" v-model="contactEmail" class="contact_input"></el-input>
                     </el-col>
                 </el-row>
                 <el-row>
-                    <el-col :span="24">
+                    <el-col :span="24" :class="{'has-error': errors.has('contactMessage') }">
                         <el-input
+                                v-validate="'required|min:10'"
+                                name="contactMessage"
                                 type="textarea"
                                 :autosize="{ minRows: 2, maxRows: 4}"
                                 placeholder="message"
@@ -28,7 +31,7 @@
                 </el-row>
                 <el-row>
                     <el-col :span="24">
-                        <el-button type="primary">SEND IT!</el-button>
+                        <el-button type="primary" :disabled="false" v-on:click="sendForm">SEND IT!</el-button>
                     </el-col>
                 </el-row>
             </el-col>
@@ -44,7 +47,7 @@
                 contactName: "",
                 contactEmail: "",
                 contactMessage: "",
-                sendReady: false
+                submitted: false
             }
         },
         props: {
@@ -56,7 +59,28 @@
         },
 
         methods: {
+            sendForm: function(){
+                this.submitted = true;
 
+                var formData = new FormData();
+                formData.append('contact', this.contactEmail);
+                formData.append('email', this.contactEmail);
+                formData.append('message', this.contactMessage);
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("demo").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET",
+                    "api/contact_form.php?email=" + this.contactEmail
+                    + "&email=" + this.contactEmail
+                    + "&message=" + this.contactMessage
+                    , true);
+                xhttp.send();
+
+            }
         }
     }
 </script>
@@ -77,6 +101,7 @@
     .contact_form .el-input__inner,
     .contact_form .el-textarea__inner{
         background-color: transparent;
+        color: white;
     }
 
     .contact_form .el-row {
@@ -87,7 +112,12 @@
         font-weight: 700;
     }
 
-    @media (max-width: 992px) {
+    .contact_form .has-error .el-input__inner,
+    .contact_form .has-error  .el-textarea__inner{
+        border-color: red;
+    }
+
+    @media screen and (max-width: 991px) {
         .contact_form {
             margin-top: 10px;
         }
@@ -97,6 +127,15 @@
             margin-bottom: 10px;
         }
 
+        .contact_form .el-input__inner,
+        .contact_form .el-textarea__inner{
+            background-color: transparent;
+            color: white;
+            font-size: 1.4em;
+        }
+    }
+
+    @media screen and (max-width: 480px){
         .contact_form h1{
             font-size: 1.4em;
         }

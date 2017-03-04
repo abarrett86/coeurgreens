@@ -1,9 +1,10 @@
 <template>
 
-    <div class="parallax_container" :class="'parallax-' + num">
-        <div class="parallax_child parallax">
-
-       </div>
+    <div class="parallax_container" :class="'parallax-' + num" :style="{height:parallaxHeight + 'px'}">
+        <img v-if="num == 1" class="parallax_child parallax" src="../assets/img/banner-one.jpg"></img>
+        <img v-if="num == 2" class="parallax_child parallax" src="../assets/img/banner-two.jpg"></img>
+        <img v-if="num == 3" class="parallax_child parallax" src="../assets/img/banner-three.jpg"></img>
+        <img v-if="num == 4" class="parallax_child parallax" src="../assets/img/banner-four.jpg"></img>
         <div class="parallax_child parallax_content">
             <div class="site_content">
                 <slot name="content"></slot>
@@ -22,9 +23,9 @@ export default {
     }
   },
   props: {
-      height: {
-            type: String,
-          default: "200px"
+      parallaxHeight: {
+            type: Number,
+          default: "200"
       },
 
         num: {
@@ -40,6 +41,7 @@ export default {
 
   mounted () {
 
+      var self = this;
 
   },
 
@@ -50,7 +52,14 @@ destroyed () {
   window.removeEventListener('scroll', this.onScroll);
 },
 
+
+
   methods: {
+
+      updateBackgroundPosition: function(){
+
+      },
+
   onScroll: function(){
 
     var speed = this.speed;
@@ -58,15 +67,16 @@ destroyed () {
     var windowYOffset = window.pageYOffset,
     elementYOffset = this.$el.offsetTop,
         windowWidth = window.innerWidth,
-    elBackgrounPos = "50% " + ((windowYOffset - elementYOffset) * speed ) + "px";
+    elBackgrounPos = /*"50% " +*/ ((windowYOffset - elementYOffset) * speed ) + "px";
 
     if(windowWidth < 768){
-        elBackgrounPos = "0 0";
+        //elBackgrounPos = "0 0";
     }
 
     var parallaxingNode = this.$el.getElementsByClassName("parallax")[0];
 
-      parallaxingNode.style.backgroundPosition = elBackgrounPos;
+      //parallaxingNode.style.backgroundPosition = elBackgrounPos;
+      parallaxingNode.style.top = elBackgrounPos;
 
 //    console.log(this.$el.offsetTop + " scrolled " + elBackgrounPos );
 
@@ -92,7 +102,7 @@ destroyed () {
     background-color: transparent;
 }
 .parallax {
-  background-position: 0 0;
+
 }
 .module.parallax h1 {
   color: #1e1e1e;
@@ -113,7 +123,7 @@ destroyed () {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
 }
 
 
@@ -125,39 +135,46 @@ destroyed () {
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+    transition-timing-function: linear;
 }
 
+@media screen and (max-width: 768px) {
+    .parallax {
+        width: 170%;
+        left: -45%;
+    }
+}
+
+
+/*
+.parallax-1{
+    height: 650px;
+}
+
+
+.parallax-2{
+    height: 320px;
+}
+
+
+
+.parallax-3{
+    height: 320px;
+}
+
+
+.parallax-4{
+    height: 460px;
+}
+
+.parallax{
+    height: 1000px;
+}
+
+/*
 .parallax-1 .parallax{
     background-image: url("../assets/img/banner-one.jpg");
-
 }
-
-
-.parallax-1,
-.parallax-1 .parallax{
-    height: 500px;
-}
-
-
-.parallax-2,
-.parallax-2 .parallax{
-    height: 280px;
-}
-
-
-
-.parallax-3,
-.parallax-3 .parallax{
-    height: 280px;
-}
-
-
-.parallax-4,
-.parallax-4 .parallax{
-    height: 410px;
-}
-
-
 .parallax-2 .parallax{
     background-image: url("../assets/img/banner-two.jpg");
 }
@@ -167,5 +184,6 @@ destroyed () {
 .parallax-4 .parallax{
     background-image: url("../assets/img/banner-four.jpg");
 }
+*/
 
 </style>
