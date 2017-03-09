@@ -70,11 +70,11 @@
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("demo").innerHTML = this.responseText;
+
                     }
                 };
                 xhttp.open("GET",
-                    "api/contact_form.php?email=" + this.contactEmail
+                    "static/api/contact_form.php?email=" + this.contactEmail
                     + "&email=" + this.contactEmail
                     + "&message=" + this.contactMessage
                     , true);

@@ -9,7 +9,7 @@
   if (isset($_REQUEST['email']))  {
 
       //Email information
-      $admin_email = "alex@notwithoutus.com";
+      $admin_email = "info@coeurgreens.com";
       $email = $_REQUEST['email'];
       $subject = "Contact Email";
       $comment = $_REQUEST['message'];

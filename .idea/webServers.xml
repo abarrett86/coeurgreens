@@ -10,6 +10,14 @@
           <option name="port" value="21" />
         </fileTransfer>
       </webServer>
+      <webServer id="7bad2d20-1348-4c02-85d5-5d341bad12f2" name="coeur_greens" url="http://0390dd8.netsolhost.com">
+        <fileTransfer host="0390dd8.netsolhost.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

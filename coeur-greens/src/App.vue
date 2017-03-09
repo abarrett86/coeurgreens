@@ -30,7 +30,7 @@
           <el-col :md="{span:11, offset: 1}" :xs="{span: 24}" :sm="{span: 24}" >
               <h1>About us</h1>
               <p>We are Coeur Greens, an Agricultural Technology (AgTech) company that provides fresh, non-GMO, sustainable, locally grown greens 365 days a year. Located in North Idaho, Coeur Greens is a member of <span class="font_bold">Idaho Preferred&reg;</span>, a program managed by the Idaho State Department of Agriculture to identify and promote Idaho food and agriculture products.</p>
-              <a href="https://idahopreferred.com/members/coeur-greens/"><img src="./assets/img/idaho-green-2x.png" class="idaho_green_image" /></a>
+              <a href="https://idahopreferred.com/members/coeur-greens/" target="_blank"><img src="./assets/img/idaho-green-2x.png" class="idaho_green_image" /></a>
           </el-col>
       </el-row>
 
@@ -67,7 +67,7 @@
 
                   <div class="about_footer_content">
                       <div class="about_footer_text">
-                          GROWN WITH FRESH AQUIFER WATER FROM
+                          GROWN WITH PURE AQUIFER WATER FROM
                       </div>
                       <div class="about_footer_image">
                           <img src="./assets/img/logo-horizontal-2x.png"/>
@@ -193,7 +193,7 @@
                           <p>We are Idaho Preferred!</p>
                       </el-col>
                       <el-col :md="{span:6, offset: 0}" :xs="{span: 24}" :sm="{span: 24}">
-                        <a href="https://idahopreferred.com/members/coeur-greens/"><img src="./assets/img/idaho-white-2x.png"/></a>
+                        <a href="https://idahopreferred.com/members/coeur-greens/" target="_blank"><img src="./assets/img/idaho-white-2x.png"/></a>
                       </el-col>
               </el-col>
                 </el-row>
